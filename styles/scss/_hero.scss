@@ -3,6 +3,7 @@
 
     @include mobile {
         padding: 0 0 8rem 0;
+        overflow: hidden;
     }
 
     &--text {
