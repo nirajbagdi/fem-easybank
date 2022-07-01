@@ -1,0 +1,114 @@
+.header {
+    position: relative;
+    height: 8rem;
+
+    &__nav {
+        flex: 1;
+
+        .nav-list {
+            .nav-item {
+                position: relative;
+
+                font-size: 1.4rem;
+                font-weight: 500;
+                transition: color 0.5s;
+
+                &:not(.btn) {
+                    padding-block: 31px;
+
+                    &::before {
+                        position: absolute;
+                        bottom: 0;
+                        content: '';
+                        opacity: 0;
+
+                        width: 100%;
+                        height: 4px;
+
+                        background: linear-gradient(to right, $limeGreen, $brightCyan);
+                        transition: opacity 0.5s;
+                    }
+
+                    &:hover {
+                        color: $darkBlue;
+
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            & li:first-child,
+            & li:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__menu {
+        background: $white;
+
+        position: absolute;
+        top: 12rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 87%;
+        padding: 3.2rem;
+        border-radius: 6px;
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity 0.7s;
+
+        .nav-item {
+            color: $darkBlue;
+            font-weight: 500;
+        }
+    }
+
+    &__menu-icons {
+        cursor: pointer;
+
+        #icon-close {
+            display: none;
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 8rem;
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - 8rem);
+
+        background: linear-gradient($darkBlue, $veryLightGray);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity 0.7s;
+    }
+
+    &.show-menu {
+        .header__menu,
+        .overlay {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        #icon-close {
+            display: block;
+        }
+        #icon-hamburger {
+            display: none;
+        }
+    }
+}

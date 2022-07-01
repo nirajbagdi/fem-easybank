@@ -1,0 +1,145 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: $font-face;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: $grayishBlue;
+    overflow-x: hidden;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 120rem;
+    margin-inline: auto;
+    padding-inline: 3.2rem;
+
+    @include mobile {
+        padding-inline: 2.4rem;
+    }
+}
+
+.flex {
+    --gap: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+
+    &.justify--between {
+        justify-content: space-between;
+    }
+
+    &.flex--col {
+        flex-direction: column;
+    }
+}
+
+.grid {
+    --gap: 4.8rem;
+
+    display: grid;
+    align-items: center;
+    gap: var(--gap);
+
+    @include tablet {
+        --gap: 3.6rem;
+    }
+
+    &.cols--2 {
+        grid-template-columns: repeat(2, 1fr);
+
+        @include mobile {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &.cols--4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        @include mobile {
+            grid-template-columns: 100%;
+        }
+    }
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1.6rem 3.2rem;
+    border-radius: 50px;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.hide-mobile {
+    @include mobile {
+        display: none;
+    }
+}
+
+.hide-desktop {
+    @media screen and (min-width: $bp-mobile) {
+        display: none;
+    }
+}
+
+.heading-primary,
+.heading-secondary {
+    color: $darkBlue;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    margin-bottom: 2.4rem;
+
+    @include tablet {
+        font-size: 4.4rem;
+    }
+
+    @include mobile {
+        font-size: 4rem;
+    }
+}
+
+.heading-secondary {
+    font-size: 3.6rem;
+    margin-bottom: 2.4rem;
+}
+
+p {
+    line-height: 1.6;
+}

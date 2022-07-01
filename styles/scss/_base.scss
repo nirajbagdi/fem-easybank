@@ -1,0 +1,33 @@
+/*
+    - Font sizes (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+    - Spacing system (px)
+        2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+$font-face: 'Public Sans', sans-serif;
+
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$bp-mobile: 50em;
+$bp-tablet: 68em;
+
+@mixin mobile {
+    @media screen and (max-width: $bp-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: $bp-tablet) {
+        @content;
+    }
+}

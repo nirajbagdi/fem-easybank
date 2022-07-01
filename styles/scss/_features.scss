@@ -1,0 +1,35 @@
+.features {
+    background: $lightGrayishBlue;
+    padding: 9.6rem 0;
+
+    @include mobile {
+        text-align: center;
+        padding: 8rem 0;
+    }
+
+    &--header {
+        margin-bottom: 6.4rem;
+    }
+}
+
+.feature {
+    align-self: flex-start;
+
+    &--img {
+        margin-bottom: 3.2rem;
+
+        @include mobile {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &--title {
+        color: $darkBlue;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &--description {
+        font-size: 1.4rem;
+    }
+}
