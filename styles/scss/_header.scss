@@ -48,6 +48,7 @@
 
     &__menu {
         background: $white;
+        z-index: 5;
 
         position: absolute;
         top: 12rem;
@@ -83,6 +84,7 @@
         position: absolute;
         top: 8rem;
         left: 0;
+        z-index: 4;
 
         width: 100%;
         height: calc(100vh - 8rem);
