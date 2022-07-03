@@ -1,0 +1,74 @@
+.footer {
+    padding: 6.4rem 0;
+    background: $darkBlue;
+    color: $lightGrayishBlue;
+
+    .copyright {
+        color: $grayishBlue;
+    }
+
+    &--container {
+        --gap: 6.4rem;
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    .col--1,
+    .col--2,
+    .col--3 {
+        @media screen and (min-width: 1200px) {
+            height: 9rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .col--1 {
+        align-items: flex-start;
+        flex: 1;
+
+        .footer--logo {
+            height: 2.4rem;
+        }
+
+        @include mobile {
+            align-items: center;
+            gap: 1.6rem;
+        }
+    }
+
+    .col--2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+
+        flex: 2;
+    }
+
+    .col--3 {
+        flex: 1;
+        align-items: flex-end;
+
+        @include mobile {
+            align-items: center;
+            gap: 1.6rem;
+        }
+    }
+}
